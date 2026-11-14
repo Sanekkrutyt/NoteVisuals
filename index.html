@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мой сайт</title>
+  <title>NoteVisuals - Minecraft Mod</title>
   <style>
     * {
       margin: 0;
@@ -13,23 +13,26 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      /* Черный фон с легким голубым градиентом по центру */
+      background: radial-gradient(circle at center, #0a192f 0%, #000000 70%);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #333;
+      color: #e6f1ff;
       padding: 20px;
     }
 
     .card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 50px 40px;
-      max-width: 500px;
+      background: rgba(10, 25, 47, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 600px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(100, 255, 218, 0.05);
       animation: fadeIn 0.8s ease;
     }
 
@@ -38,74 +41,153 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #667eea, #764ba2);
+    /* Контейнер для вашего логотипа */
+    .logo-container {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 25px;
+      border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 25px;
-      font-size: 60px;
-      color: #fff;
+      background: #000;
+      box-shadow: 0 0 30px rgba(136, 219, 255, 0.2);
+      overflow: hidden;
+      border: 1px solid rgba(136, 219, 255, 0.2);
+    }
+
+    .logo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     h1 {
-      font-size: 28px;
+      font-size: 36px;
       margin-bottom: 10px;
-      color: #222;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    .status-badge {
+      display: inline-block;
+      background: rgba(255, 183, 77, 0.15);
+      color: #ffb74d;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 183, 77, 0.3);
     }
 
     .subtitle {
-      color: #777;
+      color: #8892b0;
       font-size: 16px;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .versions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
       margin-bottom: 30px;
+    }
+
+    .version-badge {
+      background: rgba(136, 219, 255, 0.1);
+      color: #88dbff;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 14px;
+      border: 1px solid rgba(136, 219, 255, 0.2);
     }
 
     .links {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 15px;
     }
 
-    .links a {
+    .btn {
       display: block;
-      padding: 14px;
+      padding: 16px;
       border-radius: 12px;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
-      background: #f0f2ff;
-      color: #4a5bd4;
+      font-size: 16px;
     }
 
-    .links a:hover {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
+    .btn-primary {
+      background: linear-gradient(135deg, #88dbff, #4a90e2);
+      color: #000;
+      box-shadow: 0 4px 15px rgba(136, 219, 255, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(136, 219, 255, 0.5);
+      color: #000;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #ccd6f6;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
       transform: translateY(-2px);
     }
 
     footer {
       margin-top: 30px;
       font-size: 13px;
-      color: #aaa;
+      color: #495670;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 20px;
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="avatar">👋</div>
-    <h1>Привет, мир!</h1>
-    <p class="subtitle">Это мой первый сайт на GitHub Pages</p>
+    <!-- Ваш логотип. Убедитесь, что файл лежит в корне репозитория и называется logo.png -->
+    <div class="logo-container">
+      <img src="logo.png" alt="NoteVisuals Logo">
+    </div>
+    
+    <h1>NoteVisuals</h1>
+    
+    <div class="status-badge">🚧 In Development</div>
+    
+    <p class="subtitle">
+      The best free visuals for Minecraft.<br>
+      Spoilers and early access are available on our Telegram channel!
+    </p>
 
-    <div class="links">
-      <a href="https://github.com" target="_blank">🐙 Мой GitHub</a>
-      <a href="https://t.me" target="_blank">✈️ Telegram</a>
-      <a href="mailto:example@mail.com">✉️ Написать мне</a>
+    <div class="versions">
+      <span class="version-badge">Minecraft 1.21.11</span>
+      <span class="version-badge">Minecraft 1.21.4</span>
     </div>
 
-    <footer>© 2026 · Сделано с ❤️</footer>
+    <div class="links">
+      <!-- Ссылка на ваш Telegram канал -->
+      <a href="https://t.me/NoteVisuals" class="btn btn-primary" target="_blank">
+        ✈️ Join Telegram for Spoilers
+      </a>
+      
+      <a href="https://github.com/Sanekkrutyt/NoteVisuals" class="btn btn-secondary" target="_blank">
+        🐙 View Source on GitHub
+      </a>
+    </div>
+
+    <footer>
+      © 2026 NoteVisuals · Made with ❤️ for Minecraft Community
+    </footer>
   </div>
 </body>
-  </html>
+</html>
